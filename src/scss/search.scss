@@ -1,0 +1,15 @@
+.search-pane,
+.search-pane-dialog-pane {
+  width: 100%;
+  padding-right: 1rem;
+
+  .search-panel {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 10px 60px 0 rgb(0 0 0 / 24%);
+    padding: 1rem;
+  }
+}
+.search-pane-dialog-pane {
+  max-width: 1070px;
+}

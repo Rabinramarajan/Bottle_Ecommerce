@@ -1,0 +1,82 @@
+.main-menus {
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu-header {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menus {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // padding: 1rem 0 1rem 1rem;
+    }
+}
+
+.menu-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem 0;
+    width: 90px;
+    position: relative;
+    cursor: pointer;
+
+    .text {
+        text-transform: capitalize;
+        margin-top: 0.25rem;
+        color: white;
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+    ion-icon {
+        font-size: 18px;
+        line-height: 1;
+        color: #ffff;
+    }
+}
+
+.side-menu-pane {
+    width: 100%;
+    margin-left: 90px;
+    height: calc(100% - 50px);
+    position: relative;
+
+    .side-menu-open {
+        width: 249px;
+        height: 100%;
+        background-color: var(--bs-secondary-light);
+
+        .submenu-item {
+            display: block;
+            padding: 0.875rem 1rem;
+
+            &:hover {
+                background-color: var(--bs-secondary);
+            }
+
+            .submenu-text {
+                line-height: 1;
+                font-weight: 500;
+            }
+
+            .submenu-icon {
+                height: 16px;
+                padding-right: 0.5rem;
+            }
+        }
+    }
+}
+
+.side-menu-backdrop {
+    top: 50px;
+    left: 90px;
+}

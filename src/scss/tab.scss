@@ -1,0 +1,25 @@
+.mat-tab-group {
+    height: 100%;
+
+    .mat-tab-body-wrapper {
+        flex: 1;
+    }
+
+    .mat-tab-header {
+        background-color: white;
+        border-bottom: 2px solid var(--bs-primary);
+    }
+
+    .mat-tab-label {
+        height: 40px;
+        font-weight: 400;
+        font-size: 14px;
+        opacity: 1;
+        color: var(--bs-primary);
+
+        &.mat-tab-label-active {
+            background-color: var(--bs-primary);
+            color: white;
+        }
+    }
+}

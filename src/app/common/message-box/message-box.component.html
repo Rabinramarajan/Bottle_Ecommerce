@@ -1,0 +1,5 @@
+<ng-container *ngIf="data.message.errorMessage.length > 0">
+    <div [ngClass]="{'message-expanded': messageBoxService.isExpanded}">
+        <app-message-header></app-message-header>
+    </div>
+</ng-container>

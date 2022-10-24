@@ -1,0 +1,22 @@
+<ng-container *ngIf="filter === ''">
+    <button class="app-button" matRipple #searchbtn (click)="openSearch()">
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="me-1">{{label}}</div>
+            <ng-container *ngIf="!overLayService.isSearchboxOpen">
+                <ng-container *ngIf="src === ''">
+                    <ion-icon [name]="icon"></ion-icon>
+                </ng-container>
+                <ng-container *ngIf="src !== ''">
+                    <ion-icon [src]="src"></ion-icon>
+                </ng-container>
+            </ng-container>
+            <ng-container *ngIf="overLayService.isSearchboxOpen">
+                <ion-icon name="close"></ion-icon>
+            </ng-container>
+        </div>
+    </button>
+</ng-container>
+
+<ng-container *ngIf="filter !== ''">
+    <ion-icon name="funnel-outline" #searchbtn (click)="openSearch()"></ion-icon>
+</ng-container>

@@ -1,0 +1,151 @@
+@keyframes slidein {
+  from {
+    transform: translateX(-75px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideup {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rightslidein {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.alert-container {
+  position: relative;
+
+  p,
+  h3,
+  .sub-heading {
+    user-select: none;
+  }
+
+  h3 {
+    font-size: 28px;
+    color: #353535;
+    text-align: center;
+    padding-top: 1rem;
+    font-weight: 400;
+    animation-duration: 1s;
+    // animation-name: slidein;
+    // opacity: 0;
+  }
+
+  .sub-heading {
+    width: 60%;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.493);
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 1px;
+    margin: auto;
+    animation-duration: 1.3s;
+    // animation-name: slidein;
+    // animation-delay: 0.3s;
+    // opacity: 0;
+  }
+
+  .warning {
+    position: relative;
+    width: 80%;
+    margin: 1rem auto;
+    padding: 1rem;
+    // height: 120px;
+    border-radius: 10px;
+    background-color: rgba(255, 143, 116, 0.116);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    animation-duration: 1.6s;
+    // animation-name: slidein;
+
+    // opacity: 0;
+    .alert-icon {
+      min-width: 40px;
+      margin-left: 1rem;
+
+      svg {
+        width: 40px;
+
+        path {
+          fill: rgb(255, 87, 87);
+        }
+      }
+    }
+
+    .warn-para {
+      margin: 0 0 0 1rem;
+      color: rgba(92, 92, 92);
+    }
+  }
+
+  .cancel,
+  .yes-delete {
+    background-color: transparent;
+    border: 2px solid rgb(87, 89, 117);
+    border-radius: 4px;
+    width: 130px;
+    height: 35px;
+    color: rgb(87, 89, 117);
+    position: relative;
+    margin: 0 1rem;
+    // transform: translateY(100px);
+    // opacity: 0;
+    animation-duration: 1s;
+    // animation-name: slidein;
+  }
+
+  .yes-delete {
+    background-color: rgb(255, 87, 87);
+    border-color: rgb(255, 87, 87);
+    color: rgba(255, 255, 255);
+  }
+
+  .btn-closure {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    z-index: 2;
+
+    button {
+      animation-duration: 1.6s;
+      // animation-name: rightslidein;
+    }
+
+    svg {
+      width: 24px;
+    }
+  }
+}

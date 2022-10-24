@@ -1,0 +1,31 @@
+<div class="footer-msg-box">
+    <div class="bg-toolbar" matRipple (click)="messageBoxService.expandMessageBox(0)">
+    </div>
+    <div class="title-1">Message</div>
+    <div class="p-3"></div>
+    <ng-container>
+        <ng-container *ngIf="(data.message.errorMessage | messageFilter : 0).length > 0">
+            <div class="error-title" matRipple (click)="messageBoxService.expandMessageBox(0)">Error
+                ({{(data.message.errorMessage |
+                messageFilter: 0).length}})</div>
+        </ng-container>
+        <ng-container *ngIf="(data.message.errorMessage | messageFilter : 1).length > 0">
+            <div class="warning-title" matRipple (click)="messageBoxService.expandMessageBox(1)">Warning
+                ({{(data.message.errorMessage
+                | messageFilter: 1).length}})</div>
+        </ng-container>
+        <ng-container *ngIf="(data.message.errorMessage | messageFilter : 2).length > 0">
+            <div class="information-title" matRipple (click)="messageBoxService.expandMessageBox(2)">Information
+                ({{(data.message.errorMessage | messageFilter: 2).length}})</div>
+        </ng-container>
+    </ng-container>
+    <div class="ml-auto">
+        <button mat-icon-button class="text-center expand-btn" [ngClass]="{'expanded': messageBoxService.isExpanded}"
+            (click)="messageBoxService.expandMessageBox(0)">
+            <ion-icon name="chevron-up-outline"></ion-icon>
+        </button>
+        <button mat-icon-button class="text-center expand-btn ml-3" (click)="closeErrorMessageBox()">
+            <ion-icon name="close-outline"></ion-icon>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,328 @@
+$setHeight1: 30px;
+
+.message-expanded {
+    .footer-msg-box {
+        z-index: 1000;
+    }
+}
+
+.footer-msg-box {
+    width: 100%;
+    height: $setHeight1;
+    padding: 0 2rem;
+    line-height: $setHeight1;
+    display: flex;
+    position: relative;
+    z-index: 1500;
+
+    .bg-toolbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background-color: var(--bs-danger);
+        opacity: 0.8;
+    }
+
+    .title-1 {
+        color: white;
+        font-weight: 600;
+        font-size: 13px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        line-height: $setHeight1;
+        z-index: 2;
+    }
+
+    .error-title,
+    .warning-title,
+    .information-title {
+        font-weight: 400;
+        font-size: 13px;
+        margin-bottom: 0;
+        line-height: $setHeight1;
+        height: $setHeight1;
+        padding-left: 3rem;
+        padding-right: 1rem;
+        opacity: 0.8;
+        position: relative;
+        cursor: pointer;
+        color: white;
+        z-index: 2;
+
+        &:hover,
+        &:focus,
+        &:active {
+            outline: 0;
+            background-color: transparent;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            left: 1.7rem;
+            top: 50%;
+            transform: translateY(-70%);
+        }
+    }
+
+    .warning-title {
+        &:before {
+            background-color: var(--warning);
+        }
+    }
+
+    .information-title {
+        &:before {
+            background-color: var(--info);
+        }
+    }
+
+    .mat-icon-button {
+        width: $setHeight1 !important;
+        height: $setHeight1 !important;
+        line-height: $setHeight1 !important;
+        color: white;
+        z-index: 2;
+
+        ion-icon {
+            width: 18px !important;
+            height: 18px !important;
+        }
+    }
+}
+
+.msg-portal-box {
+    .message-body {
+        .message-box {
+            .error-message li .error_msg {
+                color: var(--bs-danger);
+                padding: 5px;
+            }
+        }
+    }
+}
+
+@-webkit-keyframes expand {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+
+    to {
+        max-height: 255px;
+        opacity: 1;
+    }
+}
+
+@keyframes expand {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+
+    to {
+        max-height: 255px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes collapse-in {
+    from {
+        max-height: 255px;
+        opacity: 1;
+    }
+
+    to {
+        max-height: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes collapse-in {
+    from {
+        max-height: 255px;
+        opacity: 1;
+    }
+
+    to {
+        max-height: 0;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes expand-header {
+    from {
+        min-height: $setHeight1;
+        background: var(--danger);
+    }
+
+    to {
+        min-height: $setHeight1;
+        background: #e8dcdf;
+    }
+}
+
+@keyframes expand-header {
+    from {
+        min-height: $setHeight1;
+        background: var(--danger);
+    }
+
+    to {
+        min-height: $setHeight1;
+        background: #e8dcdf;
+    }
+}
+
+@-webkit-keyframes collapse-header {
+    from {
+        min-height: $setHeight1;
+    }
+
+    to {
+        min-height: $setHeight1;
+    }
+}
+
+@keyframes collapse-header {
+    from {
+        min-height: $setHeight1;
+    }
+
+    to {
+        min-height: $setHeight1;
+    }
+}
+
+@-webkit-keyframes strink-button {
+    from {
+        opacity: 1;
+        margin-top: "5px";
+    }
+
+    to {
+        opacity: 0;
+        margin-top: "0";
+    }
+}
+
+@keyframes strink-button {
+    from {
+        opacity: 1;
+        margin-top: "5px";
+    }
+
+    to {
+        opacity: 0;
+        margin-top: "0";
+    }
+}
+
+.flash {
+    -webkit-animation-name: flash-animation;
+    -webkit-animation-duration: 0.3s;
+
+    animation-name: flash-animation;
+    animation-duration: 0.3s;
+}
+
+@-webkit-keyframes flash-animation {
+    from {
+        background: var(--danger);
+    }
+
+    to {
+        background: #e8dcdf;
+    }
+}
+
+@keyframes flash-animation {
+    from {
+        background: var(--danger);
+    }
+
+    to {
+        background: #e8dcdf;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.msg-portal-box {
+    width: 100%;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+
+    .message-body {
+        // flex: 1;
+        // padding: 0 2rem;
+        background-color: #f2f2f3;
+        position: relative;
+        z-index: 1;
+        overflow: auto;
+        // max-height: 0;
+        // transition: all 0.5s ease;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-name: expand;
+        animation-name: expand;
+
+        &.closing {
+            -webkit-animation-name: collapse-in;
+            animation-name: collapse-in;
+        }
+
+        .message-box {
+            min-height: 75px;
+            padding: 1rem 2rem;
+            // padding: 0 2rem;
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    padding-bottom: 0.5rem;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+
+                    &:last-child {
+                        // border-bottom-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.animate__animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.expand-btn {
+    ion-icon {
+        transition: all 0.3ms;
+    }
+
+    &.expanded {
+        ion-icon {
+            transform: rotate(180deg);
+        }
+    }
+}
